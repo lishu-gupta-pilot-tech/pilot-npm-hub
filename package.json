@@ -1,0 +1,24 @@
+{
+  "name": "pilot-fusion",
+  "version": "1.0.0",
+  "description": "this is the llm packate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.2.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.25.2",
+    "@google/generative-ai": "^0.16.0",
+    "@mistralai/mistralai": "^1.0.2",
+    "openai": "^4.55.5",
+    "typescript": "^5.5.4"
+  },
+  "readme": "README.md",
+  "readmeFilename": "README.md"
+}
