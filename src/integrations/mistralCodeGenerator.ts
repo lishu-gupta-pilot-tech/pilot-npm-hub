@@ -1,16 +1,22 @@
 import { Mistral } from '@mistralai/mistralai';
 import { CodeGenerator } from '../common_llm/codeGenerator';
+import { setMistralApiKey , getMistralApiKey  } from "../config/apiKeys";
 
 export class MistralCodeGenerator extends CodeGenerator {
     private client: Mistral;
 
-    constructor() {
-        const apiKey = process.env.MISTRAL_API_KEY;
-        if (!apiKey) {
-            throw new Error("MISTRAL_API_KEY is not set in the environment.");
-        }
+    constructor(apiKey?: string) {
         super('Mistral');
-        this.client = new Mistral({ apiKey: apiKey });
+
+
+        if (apiKey) {
+            setMistralApiKey(apiKey);
+        }
+
+
+        const apiKeyFromEnv = getMistralApiKey();
+
+        this.client = new Mistral({ apiKey: apiKeyFromEnv });
     }
 
     public async getModelResponse(fullPrompt: string): Promise<string> {
