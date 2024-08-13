@@ -101,7 +101,7 @@ export abstract class CodeGenerator {
           ${prompt}\n\n
         `;
     
-        // Get model response asynchronously
+
         const response = await this.getModelResponse(fullPrompt);
         const content = this.parseResponse(response);
     
