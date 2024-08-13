@@ -1,14 +1,23 @@
-// src/openaiCodeGenerator.ts
+
 import { CodeGenerator } from '../common_llm/codeGenerator';
 import OpenAI from 'openai';
+import { setOpenAIApiKey , getOpenAIApiKey  } from "../config/apiKeys";
 
 export class OpenaiCodeGenerator extends CodeGenerator {
     private openai: OpenAI;
 
-    constructor(apiKey: string, modelName: string) {
+    constructor(modelName: string, apiKey?: string) {
         super(modelName);
+        
+
+        if (apiKey) {
+            setOpenAIApiKey(apiKey);
+        }
+
+        const apiKeyToUse = getOpenAIApiKey();
+        
         this.openai = new OpenAI({
-            apiKey: apiKey,
+            apiKey: apiKeyToUse,
         });
     }
 
@@ -16,7 +25,7 @@ export class OpenaiCodeGenerator extends CodeGenerator {
         try {
             const response = await this.openai.chat.completions.create({
                 messages: [{ role: 'user', content: fullPrompt }],
-                model: 'gpt-4o-mini',
+                model: this.modelName,
             });
             return response.choices[0].message?.content?.trim() || '';
         } catch (error) {
