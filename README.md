@@ -8,3 +8,12 @@ Pilot Aggregator is a Python package designed to streamline the aggregation of d
 - **Code Generation:** Generate Python code based on prompts using the specified LLM.
 - **Text Generation:** Generate detailed text responses based on prompts using the specified LLM.
 - **Extensible Design:** Easily add support for more LLMs in the future.
+
+
+## Installation
+
+You can install the package using npm:
+
+```bash
+npm i pilot-fusion
+```
