@@ -113,7 +113,7 @@ This generator uses Google's Gemini model.
 ```python
 import * as LLMintegrator from 'pilot-fusion';
 
-const geminiCodeGen = new LLMintegrator.GeminiCodeGenerator();
+const geminiCodeGen = new LLMintegrator.GeminiCodeGenerator('model-name');
 async function generateDiagram() {
     const prompt = 'create a diagram for banking system.';
     
@@ -133,7 +133,7 @@ This generator uses OpenAI's models like GPT-3.5-turbo.
 ```python
 import * as LLMintegrator from 'pilot-fusion';
 
-const geminiCodeGen = new LLMintegrator.OpenaiCodeGenerator();
+const geminiCodeGen = new LLMintegrator.OpenaiCodeGenerator('model-name');
 async function generateDiagram() {
     const prompt = 'create a diagram for banking system.';
     
@@ -155,7 +155,7 @@ This generator uses the Mistral model.
 ```python
 import * as LLMintegrator from 'pilot-fusion';
 
-const geminiCodeGen = new LLMintegrator.MistralCodeGenerator();
+const geminiCodeGen = new LLMintegrator.MistralCodeGenerator('model-name');
 async function generateDiagram() {
     const prompt = 'create a diagram for banking system.';
     
@@ -177,7 +177,7 @@ This generator uses Anthropic's Claude model.
 ```python
 import * as LLMintegrator from 'pilot-fusion';
 
-const geminiCodeGen = new LLMintegrator.ClaudeCodeGenerator();
+const geminiCodeGen = new LLMintegrator.ClaudeCodeGenerator('model-name');
 async function generateDiagram() {
     const prompt = 'create a diagram for banking system.';
     
